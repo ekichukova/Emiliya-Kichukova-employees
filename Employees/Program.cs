@@ -7,7 +7,7 @@ namespace Employees
         static void Main(string[] args)
         {
             // Add csv file path here:
-            string csvFilePath = @"";
+            string csvFilePath = @"C:\Users\ekich\OneDrive\Desktop\Sirma\employees-test-data.csv";
 
             var service = new EmployeePairsService();
             var result = service.GroupEmployees(csvFilePath);
@@ -15,7 +15,7 @@ namespace Employees
             foreach (var employeePair in result)
             {
                 Console.WriteLine($"{employeePair.Key.Item1}, {employeePair.Key.Item2}:");
-                foreach (var project in employeePair.Value.DaysWorkedPerProject)
+                foreach (var project in employeePair.Value.ProjectsWorkedTogether)
                 {
                     Console.WriteLine($"    Project #{project.Key} - {project.Value} days.");
                 }

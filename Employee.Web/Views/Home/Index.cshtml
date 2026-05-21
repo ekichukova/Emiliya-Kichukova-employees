@@ -1,0 +1,37 @@
+﻿@model List<EmployeePairViewModel>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".csv" />
+    <button type="submit">Upload</button>
+</form>
+
+@if (Model != null && Model.Any())
+{
+    <br />
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Employee ID #1</th>
+                <th>Employee ID #2</th>
+                <th>Project ID</th>
+                <th>Days Worked On Project</th>
+                <th>Total Days Together</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pair in Model)
+            {
+                foreach (var project in pair.Projects)
+                {
+                    <tr>
+                        <td>@pair.EmployeeId1</td>
+                        <td>@pair.EmployeeId2</td>
+                        <td>@project.ProjectId</td>
+                        <td>@project.DaysWorked</td>
+                        <td>@pair.TotalDaysWorkedTogether</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}

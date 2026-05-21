@@ -24,7 +24,7 @@
         private void ProcessEmployeesForProject(
             int projectId,
             List<EmployeeEvent> employeesEvents,
-             Dictionary<Tuple<int, int>, ProjectCollaborationData> result)
+            Dictionary<Tuple<int, int>, ProjectCollaborationData> result)
         {
             Dictionary<int, DateOnly> activeEmployees = new Dictionary<int, DateOnly>();
 
@@ -77,18 +77,18 @@
             {
                 collaborations.Add(coWorkersPair, new ProjectCollaborationData()
                 {
-                    DaysWorkedPerProject = new Dictionary<int, int>()
+                    ProjectsWorkedTogether = new Dictionary<int, int>()
                 });
             }
             collaborations[coWorkersPair].TotalDaysTogether += daysWorkedTogether;
 
             // adds the project to the coworkers in case it's a new project 
             // and calculates the total days they have worked on for the particular project.
-            if (collaborations[coWorkersPair].DaysWorkedPerProject.ContainsKey(projectId) == false)
+            if (collaborations[coWorkersPair].ProjectsWorkedTogether.ContainsKey(projectId) == false)
             {
-                collaborations[coWorkersPair].DaysWorkedPerProject.Add(projectId, 0);
+                collaborations[coWorkersPair].ProjectsWorkedTogether.Add(projectId, 0);
             }
-            collaborations[coWorkersPair].DaysWorkedPerProject[projectId] += daysWorkedTogether;
+            collaborations[coWorkersPair].ProjectsWorkedTogether[projectId] += daysWorkedTogether;
         }
     }
 }
