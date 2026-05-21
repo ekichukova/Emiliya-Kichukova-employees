@@ -1,6 +1,6 @@
 ﻿namespace EmployeePairs
 {
-    record class CsvEmployee
+    internal record CsvEmployee
     {
         public int EmpID { get; init; }
 

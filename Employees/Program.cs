@@ -7,10 +7,10 @@ namespace Employees
         static void Main(string[] args)
         {
             // Add csv file path here:
-            string csvFilePath = @"";
+            string csvFilePath = @"C:\Users\ekich\OneDrive\Desktop\Sirma\employees-test-data.csv";
 
             var service = new EmployeePairsService();
-            var result = service.GroupEmployees(@"");
+            var result = service.GroupEmployees(csvFilePath);
 
             foreach (var employeePair in result)
             {
