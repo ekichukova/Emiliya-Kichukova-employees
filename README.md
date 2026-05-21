@@ -5,5 +5,4 @@ together on common projects for the longest period of time.
 
 # How to run
 
-The executable project is the console application **Employees**.
-Please add the path to your csvFile in Program.cs line 10.
+Run the Employee.Web MVC project and uplad a csv file.
