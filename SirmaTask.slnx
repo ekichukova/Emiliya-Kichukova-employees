@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="EmployeePairs/EmployeePairs.csproj" />
+  <Project Path="Employees/Employees.csproj" Id="313f0664-c0bf-43e7-9c05-8ceae9f9d499" />
+</Solution>
